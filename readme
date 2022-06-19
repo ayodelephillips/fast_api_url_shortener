@@ -1,0 +1,34 @@
+Using Python with the FastAPI framework,
+build a URL shortener service.
+The API should contain the following components;
+●An endpoint that accepts a URL to be shortened and returns a short url.
+ ● Accepts a short URL and redirects the caller to the original URL.
+
+ Level up!Create a CLI that can be used to call your service.
+ Ensure
+ ● Sound design approach that's not overly complicated or over-engineered.
+ ● Code that's easy to read and not too "clever".
+ ● Sensible tests in place
+
+ How to run
+1. activate the virtual environment 'env'
+2. Launch the server using the command 'uvicorn main:app --reload'
+3. Launch the CLI, by navigating to the root directory 'fastapi'. Then run the command in the format
+        python cli_script.py --url [url] --urltype [urltype].
+An example is
+        python cli_script.py  --url smaller_url_as2hruy --urltype short_url
+
+
+
+
+######FUTURE CHANGES############
+1. extra tests needed. How to test the db? - create a test dbsession similar to the one in db.py. This way you can test the
+short code uniqueness
+2. improve the error message sent when a particular endpoint is not available e.g. localhost:8000 gives {"detail":"Not Found"}
+3. enforce data validation at the pydantic schema stage. e.g. the email validators can be put in the pydan schema level
+4. improve the cli to use the node js
+5. better documentation of the API. research on this.
+6. organise the pytest into test suites. Research on pytest test suites
+7. use mocking to simulate tinyurl response; or replace the tinyurl function with the use of UUID
+8. add authentication headers. - use oauth2  for this. also add the CORS (Cross-Origin Resource Sharing) option.
+9. use Node.js to build the cli instead
